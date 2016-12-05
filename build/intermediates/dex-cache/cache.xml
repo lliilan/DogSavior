@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="E:\clones\DogSavior\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="E:\clones\DogSavior\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_fddda8450ea0dbfaaeb83c6416a3b7b26f1b455b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="E:\clones\DogSavior\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
         <dex dex="E:\clones\DogSavior\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_b558f4530cca485e6dae48179877dcfe4c2ddb93\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\clones\DogSavior\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="E:\clones\DogSavior\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_fddda8450ea0dbfaaeb83c6416a3b7b26f1b455b\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -102,21 +102,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="E:\clones\DogSavior\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="475ce086faca87b91ce37d6cd866255a6faffc07">
-        <dex dex="E:\clones\DogSavior\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_4975e5f3bfe459067e33e06f08fcbc64bc60efc9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="E:\clones\DogSavior\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
         <dex dex="E:\clones\DogSavior\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_82ce43826b593174b14520729940046934ba250d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\clones\DogSavior\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="eaae93a366be63b9605d8e54a9793a2c71e6b15e">
+        <dex dex="E:\clones\DogSavior\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_4975e5f3bfe459067e33e06f08fcbc64bc60efc9\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -133,7 +133,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="1c0dfab2a9d187a466c4c6f3fd55d98c5de1d010">
+        sha1="bb94aebc3102df393314d6022c722a126f7bd1d4">
         <dex dex="E:\clones\DogSavior\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_3293189227c14fcaa1b7a189fdebdb16f3f1d840\classes.dex" />
     </item>
     <item

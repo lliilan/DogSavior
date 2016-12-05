@@ -1,40 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:layout_weight="1"
+    <LinearLayout
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <View
+        android:layout_marginBottom="5dp"
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray" />
+
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:gravity="center"
+            android:button="@null"
+            android:id="@+id/tv1"
+            android:checked="true"
+            android:drawableTop="@mipmap/frag_home1"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="互动"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:button="@null"
+            android:drawableTop="@mipmap/frag_note1"
+            android:gravity="center"
+            android:text="发帖"
+            android:id="@+id/tv2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:button="@null"
+            android:text="我的"
+            android:drawableTop="@mipmap/frag_my1"
+            android:gravity="center"
+            android:id="@+id/tv3"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_above="@+id/bottom_bar"
+        android:layout_below="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     </FrameLayout>
 
-    <RadioGroup
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/rb1"
-            android:checked="true"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:text=""
-            android:layout_height="wrap_content" />
-
-        <RadioButton
-            android:id="@+id/rb2"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-
-        <RadioButton
-            android:id="@+id/rb3"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-
-    </RadioGroup>
-
-</LinearLayout>
+</RelativeLayout>
