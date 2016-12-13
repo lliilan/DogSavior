@@ -1,8 +1,10 @@
 package com.dogsavior.dogsavior.activity;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.GestureDetector;
@@ -15,10 +17,12 @@ import com.dogsavior.dogsavior.R;
 import com.dogsavior.dogsavior.adapter.ViewPagerAdapter;
 import com.dogsavior.dogsavior.util.PreferenceUtil;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 需要优化
  * Created by KL on 2016/11/29 0029.
  */
 
@@ -30,8 +34,8 @@ public class FirstSlideActivity extends Activity implements View.OnClickListener
     private GestureDetector gestureDetector;
 
     //引导图片资源
-    private static final int[] pics = {R.mipmap.pager1,R.mipmap.pager2,R.mipmap.pager3,R.mipmap.pager4};
-    //底部点（dot）资源
+    private final int[] pics = {R.mipmap.pager1,R.mipmap.pager2,R.mipmap.pager3,R.mipmap.pager4};
+    //底部点资源
     private ImageView[] dots;
     //记录当前选中位置
     private int currentIndex;
@@ -43,18 +47,28 @@ public class FirstSlideActivity extends Activity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_slide_layout);
 
-        isShow = PreferenceUtil.getBoolean(getApplication(),PreferenceUtil.SHOW_FIRST_SLIDE);
+        //获得引导页面的判断值，然后进行判断是否要进入引导界面
+        isShow = PreferenceUtil.getBoolean(FirstSlideActivity.this,PreferenceUtil.SHOW_FIRST_SLIDE);
         if (isShow){
-            IntetnMain();
+            IntentMain();
         }else{
             viewList = new ArrayList<View>();
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.MATCH_PARENT);
 
+            //给引导页面加载图片
             for (int i = 0;i<pics.length;i++){
-                ImageView iv = new ImageView(this);
+                ImageView iv = new ImageView(FirstSlideActivity.this);
+                BitmapFactory.Options opt = new BitmapFactory.Options();
+                opt.inPreferredConfig = Bitmap.Config.RGB_565;
+                opt.inPurgeable = true;
+                opt.inInputShareable = true;
+                InputStream is = getResources().openRawResource(pics[i]);
+                Bitmap bitmap = BitmapFactory.decodeStream(is, null, opt);
+                BitmapDrawable bitmapDrawable = new BitmapDrawable(getResources(),bitmap);
+                iv.setBackgroundDrawable(bitmapDrawable);
                 iv.setLayoutParams(params);
-                iv.setBackgroundResource(pics[i]);
+//                iv.setBackgroundResource(pics[i]);
                 viewList.add(iv);
             }
             viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -77,7 +91,7 @@ public class FirstSlideActivity extends Activity implements View.OnClickListener
 
         for (int i = 0; i < pics.length; i++) {
             dots[i] = (ImageView) ll.getChildAt(i);
-            dots[i].setImageResource(R.mipmap.dot);//都设为灰色
+            dots[i].setImageResource(R.mipmap.dot1);//都设为灰色
             dots[i].setOnClickListener(this);
             dots[i].setTag(i);//设置位置tag，方便取出与当前位置对应
         }
@@ -86,8 +100,8 @@ public class FirstSlideActivity extends Activity implements View.OnClickListener
         dots[currentIndex].setImageResource(R.mipmap.dot2);//设置为白色，即选中状态
     }
 
-    private void IntetnMain(){
-        startActivity(new Intent(getApplication(),MainActivity.class));
+    private void IntentMain(){
+        startActivity(new Intent(FirstSlideActivity.this,MainActivity.class));
         finish();
     }
 
@@ -95,33 +109,31 @@ public class FirstSlideActivity extends Activity implements View.OnClickListener
         if (position < 0 || position >= pics.length) {
             return;
         }
-
         viewPager.setCurrentItem(position);
     }
 
-    private void setCurDot(int positon) {
-        if (positon < 0 || positon > pics.length - 1 || currentIndex == positon) {
+    private void setCurDot(int position) {
+        if (position < 0 || position > pics.length - 1 || currentIndex == position) {
             return;
         }
+        dots[position].setImageResource(R.mipmap.dot2);
+        dots[currentIndex].setImageResource(R.mipmap.dot1);
 
-        dots[positon].setImageResource(R.mipmap.dot2);
-        dots[currentIndex].setImageResource(R.mipmap.dot);
-
-        currentIndex = positon;
+        currentIndex = position;
     }
 
     /**
      * 判断是否跳转到MainActivity
      */
     private void slipToMain(){
-        gestureDetector = new GestureDetector(getApplication(),
+        gestureDetector = new GestureDetector(FirstSlideActivity.this,
                 new GestureDetector.SimpleOnGestureListener(){
                     @Override
                     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-                        if (currentIndex == 3){
+                        if (currentIndex == (pics.length-1)){
                             if ((e1.getRawX() - e2.getRawX()) >= 0){
-                                PreferenceUtil.setBoolean(getApplicationContext(), PreferenceUtil.SHOW_FIRST_SLIDE, true);
-                                IntetnMain();
+                                PreferenceUtil.setBoolean(FirstSlideActivity.this, PreferenceUtil.SHOW_FIRST_SLIDE, true);
+                                IntentMain();
                                 return true;
                             }
                         }

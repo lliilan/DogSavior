@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_width="match_parent"
+    android:id="@+id/ll_home"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@color/colorApp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:background="@drawable/reg"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:gravity="right"
+                android:id="@+id/iv_search"
+                android:src="@mipmap/search"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <EditText
+                android:alpha="26"
+                android:background="@null"
+                android:gravity="left"
+                android:focusable="false"
+                android:padding="8dp"
+                android:hint="@string/search"
+                android:id="@+id/et_title_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginTop="5dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:drawableTop="@mipmap/add"
+            android:id="@+id/title_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--<ImageView-->
+                <!--android:src="@mipmap/massage"-->
+                <!--android:id="@+id/title_talk"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content" />-->
+
+    </LinearLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:clipChildren="false"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.dogsavior.dogsavior.customsview.BannerView
+                android:id="@+id/banner_view"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+            </com.dogsavior.dogsavior.customsview.BannerView>
+
+            <com.dogsavior.dogsavior.customsview.MyViewPager
+                android:id="@+id/vp_home"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginTop="10dp"
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+            </com.dogsavior.dogsavior.customsview.MyViewPager>
+
+            <!--<com.dogsavior.dogsavior.customsview.Image3DSwitchView-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:id="@+id/image_switch_view"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="150dp" >-->
+
+                <!--<com.dogsavior.dogsavior.customsview.Image3DView-->
+                    <!--android:id="@+id/image1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@mipmap/slide1" />-->
+
+                <!--<com.dogsavior.dogsavior.customsview.Image3DView-->
+                    <!--android:id="@+id/image2"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@mipmap/slide2" />-->
+
+                <!--<com.dogsavior.dogsavior.customsview.Image3DView-->
+                    <!--android:id="@+id/image3"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@mipmap/slide1" />-->
+
+                <!--<com.dogsavior.dogsavior.customsview.Image3DView-->
+                    <!--android:id="@+id/image4"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@mipmap/slide1" />-->
+
+                <!--<com.dogsavior.dogsavior.customsview.Image3DView-->
+                    <!--android:id="@+id/image5"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@mipmap/slide1" />-->
+
+                <!--<com.dogsavior.dogsavior.customsview.Image3DView-->
+                    <!--android:id="@+id/image6"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@mipmap/slide1" />-->
+
+                <!--<com.dogsavior.dogsavior.customsview.Image3DView-->
+                    <!--android:id="@+id/image7"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@mipmap/slide1" />-->
+            <!--</com.dogsavior.dogsavior.customsview.Image3DSwitchView>-->
+
+            <!--<LinearLayout-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<TextView-->
+                    <!--android:scaleX="0.5"-->
+                    <!--android:scaleY="0.5"-->
+                    <!--android:gravity="center"-->
+                    <!--android:drawableTop="@mipmap/homeiv1"-->
+                    <!--android:text="宠物领养"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content" />-->
+
+                <!--<TextView-->
+                    <!--android:scaleX="0.5"-->
+                    <!--android:scaleY="0.5"-->
+                    <!--android:gravity="center"-->
+                    <!--android:drawableTop="@mipmap/homeiv2"-->
+                    <!--android:text="申请义工"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content" />-->
+
+                <!--<TextView-->
+                    <!--android:scaleX="0.5"-->
+                    <!--android:scaleY="0.5"-->
+                    <!--android:gravity="center"-->
+                    <!--android:drawableTop="@mipmap/homeiv3"-->
+                    <!--android:text="场地简介"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content" />-->
+
+                <!--<TextView-->
+                    <!--android:scaleX="0.5"-->
+                    <!--android:scaleY="0.5"-->
+                    <!--android:gravity="center"-->
+                    <!--android:drawableTop="@mipmap/homeiv4"-->
+                    <!--android:text="还没有定"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content" />-->
+
+            <!--</LinearLayout>-->
+
+            <com.dogsavior.dogsavior.customsview.NoScrollListview
+                android:id="@+id/lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.dogsavior.dogsavior.customsview.NoScrollListview>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

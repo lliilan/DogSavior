@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <com.dogsavior.dogsavior.customsview.CircleImageView
+            android:padding="5dp"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/iv_user_icon"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="18sp"
+            android:text="这里是一只羊"
+            android:id="@+id/tv_username"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="18分钟前"
+            android:id="@+id/tv_note_time"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:padding="10dp"
+        android:id="@+id/iv_note_pic"
+        android:src="@mipmap/slide2"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+    <TextView
+        android:textSize="15sp"
+        android:padding="8dp"
+        android:maxLines="5"
+        android:id="@+id/tv_note_text"
+        android:text="这里是一只羊发的帖子的具体内容，测试用"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:text="转发"
+            android:drawableLeft="@mipmap/massage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:text="评论"
+            android:drawableLeft="@mipmap/massage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:text="点赞"
+            android:drawableLeft="@mipmap/massage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--<View-->
+        <!--android:layout_marginBottom="5dp"-->
+        <!--android:id="@+id/line"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="10dp"-->
+        <!--android:background="@color/colorGray" />-->
+
+</LinearLayout>

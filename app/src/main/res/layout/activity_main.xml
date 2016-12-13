@@ -4,64 +4,95 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-    <View
-        android:layout_marginBottom="5dp"
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorGray" />
-
-    <LinearLayout
-        android:id="@+id/bottom_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:gravity="center"
-            android:button="@null"
-            android:id="@+id/tv1"
-            android:checked="true"
-            android:drawableTop="@mipmap/frag_home1"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:text="互动"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:button="@null"
-            android:drawableTop="@mipmap/frag_note1"
-            android:gravity="center"
-            android:text="发帖"
-            android:id="@+id/tv2"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:button="@null"
-            android:text="我的"
-            android:drawableTop="@mipmap/frag_my1"
-            android:gravity="center"
-            android:id="@+id/tv3"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    </LinearLayout>
-
     <FrameLayout
         android:id="@+id/fl_content"
-        android:layout_above="@+id/bottom_bar"
-        android:layout_below="@+id/ll"
+        android:layout_above="@+id/ll_tab"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </FrameLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/ll_tab"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <View
+            android:layout_marginBottom="5dp"
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray" />
+
+        <LinearLayout
+            android:id="@+id/bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+            <RadioButton
+                android:id="@+id/rb_main_home"
+                android:textSize="14sp"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@drawable/rb_tab_home"
+                android:checked="true"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="@string/tab_home"
+                android:layout_height="40dp" />
+
+            <RadioButton
+                android:textSize="14sp"
+                android:button="@null"
+                android:drawableTop="@drawable/rb_tab_find"
+                android:gravity="center"
+                android:text="@string/tab_find"
+                android:id="@+id/rb_main_find"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="40dp" />
+
+            <RadioButton
+                android:button="@null"
+                android:drawableTop="@drawable/tab_main_note"
+                android:id="@+id/rb_main_note"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="40dp" />
+
+            <RadioButton
+                android:textSize="14sp"
+                android:button="@null"
+                android:drawableTop="@drawable/rb_tab_message"
+                android:gravity="center"
+                android:text="@string/tab_message"
+                android:id="@+id/rb_main_message"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="40dp" />
+
+            <RadioButton
+                android:textSize="14sp"
+                android:button="@null"
+                android:text="@string/tab_my"
+                android:drawableTop="@drawable/rb_tab_my"
+                android:gravity="center"
+                android:id="@+id/rb_main_my"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="40dp" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+    </LinearLayout>
 </RelativeLayout>
